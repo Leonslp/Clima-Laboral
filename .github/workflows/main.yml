@@ -1,0 +1,19 @@
+name: Doker Image CI
+
+on:
+   push:
+      branches: [ main ]
+   pull_request:
+     branches: [ main ]
+
+jobs:
+  forces:
+    runs-on: ubuntu-latest
+    container:
+      image: fluidattacks/forces:latest
+      env:
+        TOKEN: <secrets.TOKENF>
+        REPO_NAME: <Clima-Laboral>
+    steps:
+      - name: Run Agent check
+        run: forces --token ${tokenf} --strict --repo-name ${Clima-Laboral}
