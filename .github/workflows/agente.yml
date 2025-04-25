@@ -12,7 +12,7 @@ jobs:
     container:
       image: fluidattacks/forces:latest
       env:
-        TOKEN: <secrets.TOKENF>
+        TOKEN: ${{ secrets.TOKENF }}
     steps:
       - name: Run Agent check
         run: forces --token ${tokenf} --strict --dynamic -breaking 1.0
