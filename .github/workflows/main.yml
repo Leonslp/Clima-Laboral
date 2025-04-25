@@ -13,7 +13,6 @@ jobs:
       image: fluidattacks/forces:latest
       env:
         TOKEN: <secrets.TOKENF>
-        REPO_NAME: <Clima-Laboral>
     steps:
       - name: Run Agent check
-        run: forces --token ${tokenf} --strict --repo-name ${Clima-Laboral}
+        run: forces --token ${tokenf} --strict --dynamic -breaking 1.0
