@@ -15,4 +15,4 @@ jobs:
         tokenf : ${{ secrets.TOKENF }}
     steps:
       - name: Run Agent check
-        run: forces --token ${tokenf} --strict --dynamic --breaking 1.0
+        run: forces --token ${tokenf} --strict --breaking 1.0
