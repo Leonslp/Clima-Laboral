@@ -15,4 +15,4 @@ jobs:
         tokenf : ${{ secrets.TOKENF }}
     steps:
       - name: Run Agent check
-        run: forces --token ${tokenf} --strict --repo-name <VulnerableCode> --breaking 7.0
+        run: forces --token ${tokenf} --strict --repo-name VulnerableCode --breaking 7.0
