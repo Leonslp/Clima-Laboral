@@ -15,4 +15,4 @@ jobs:
         tokenf : ${{ secrets.TOKENF }}
     steps:
       - name: Run Agent check
-        run: forces --token ${tokenf} --strict
+        run: forces --token ${tokenf} --breaking 5 --strict --repo-name ${juice_shop}
