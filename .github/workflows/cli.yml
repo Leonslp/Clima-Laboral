@@ -7,9 +7,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run Fluid Attacks SAST with config file
+      - name: Run Fluid Attacks SAST
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:/project \
             fluidattacks/sast:latest \
-            sast scan /project/config.yaml
+            sast scan /project/src
+
