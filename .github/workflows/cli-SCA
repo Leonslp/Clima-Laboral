@@ -1,0 +1,15 @@
+name: Standalone CLI
+on: [push, pull_request]
+
+jobs:
+  machineStandalone:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Fluid Attacks SCA
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/project \
+            fluidattacks/sca:latest \
+            sca scan /project/src
