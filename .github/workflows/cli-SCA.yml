@@ -12,4 +12,4 @@ jobs:
           docker run --rm \
             -v ${{ github.workspace }}:/project \
             fluidattacks/sca:latest \
-            sca scan /project/src
+            sca scan /project
