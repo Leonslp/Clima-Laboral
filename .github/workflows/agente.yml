@@ -15,4 +15,4 @@ jobs:
         tokenf : ${{ secrets.TOKENF }}
     steps:
       - name: Run Agent check
-        run: forces --token ${tokenf} --strict --breaking 7 --repo-name Leonslp_Clima-Laboral
+        run: forces --token ${tokenf} --strict --breaking 1 --repo-name Leonslp_Clima-Laboral
