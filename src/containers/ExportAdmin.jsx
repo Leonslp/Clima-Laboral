@@ -14,8 +14,6 @@ const ExportAdmin = ({ onLogout }) => {
     querySnapshot.forEach((doc) => {
       allData.push({ id: doc.id, ...doc.data() });
     });
-    console.log("📦 Datos obtenidos de Firestore:", allData);
-    setData(allData);
   };
 
   const exportToExcel = () => {
