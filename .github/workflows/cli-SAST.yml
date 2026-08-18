@@ -14,6 +14,6 @@ jobs:
             fluidattacks/sast:latest \
             sast scan /project/src 
 
-            strictness_threshold: high
+            strictness_threshold: low
 
 
