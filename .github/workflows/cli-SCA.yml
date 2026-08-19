@@ -1,15 +1,23 @@
 name: Standalone CLI
 on: [push, pull_request]
-
 jobs:
   machineStandalone:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
+      - name: Create SCA config
+        run: |
+          cat > fluidattacks_sca_config.yaml <<'EOF'
+          strictness_threshold: low
+          sca:
+            include:
+              - src
+          EOF
+
       - name: Run Fluid Attacks SCA
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:/project \
             fluidattacks/sca:latest \
-            sca scan /project
+            sca scan /project/fluidattacks_sca_config.yaml
