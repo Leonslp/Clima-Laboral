@@ -10,9 +10,6 @@ jobs:
         run: |
           cat > fluidattacks_sca_config.yaml <<'EOF'
           strictness_threshold: low
-          sca:
-            include:
-              - .
           EOF
 
       - name: Run Fluid Attacks SCA
