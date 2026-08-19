@@ -5,7 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Create SCA config
         run: |
           cat > fluidattacks_sca_config.yaml <<'EOF'
@@ -13,9 +12,8 @@ jobs:
           strictness_threshold: low
           sca:
             include:
-              - src
+              - .
           EOF
-
       - name: Run Fluid Attacks SCA
         run: |
           docker run --rm \
