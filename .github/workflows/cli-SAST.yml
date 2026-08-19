@@ -1,17 +1,25 @@
 name: Standalone CLI
 on: [push, pull_request]
-
 jobs:
   machineStandalone:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
+      - name: Create SAST config
+        run: |
+          cat > fluidattacks_sast_config.yaml <<'EOF'
+          strictness_threshold: low
+          sast:
+            include:
+              - src
+          EOF
+
       - name: Run Fluid Attacks SAST
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:/project \
             fluidattacks/sast:latest \
-            sast scan /project/src strictness_threshold: low
+            sast scan /project/fluidattacks_sast_config.yaml
 
 
