@@ -12,7 +12,7 @@ jobs:
           strictness_threshold: low
           sca:
             include:
-              - src
+              - .
           EOF
 
       - name: Run Fluid Attacks SCA
