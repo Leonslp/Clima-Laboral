@@ -12,8 +12,6 @@ jobs:
           docker run --rm \
             -v ${{ github.workspace }}:/project \
             fluidattacks/sast:latest \
-            sast scan /project/src 
-
-            strictness_threshold: low
+            sast scan /project/src strictness_threshold: low
 
 
