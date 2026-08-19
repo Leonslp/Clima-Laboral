@@ -9,7 +9,11 @@ jobs:
       - name: Create SCA config
         run: |
           cat > fluidattacks_sca_config.yaml <<'EOF'
+          working_dir: /project
           strictness_threshold: low
+          sca:
+            include:
+              - src
           EOF
 
       - name: Run Fluid Attacks SCA
